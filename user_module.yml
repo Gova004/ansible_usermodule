@@ -1,9 +1,11 @@
 ---
 - hosts: localhost
   become: yes
+  become_user: gova  # Switch to user gova
+  become_method: sudo
   tasks:
-    - name: create user
-      user:
+    - name: Create user
+      ansible.builtin.user:
         name: dev1
-        comment: devlopment team
+        comment: "Development team"
         state: present
