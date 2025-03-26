@@ -3,5 +3,6 @@
   tasks:
     - name: create user
       user:
+      become: yes
         name: dev1
         comment: devlopment team
